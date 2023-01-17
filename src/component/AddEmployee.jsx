@@ -7,7 +7,7 @@ const AddEmployee = () => {
     id: "",
     firstName : "",
     lastName : "",
-    email : "",
+    emailId : "",
   });
   return (
     <div className='flex max-w-2xl shadow border-b mx-auto'>
@@ -18,15 +18,30 @@ const AddEmployee = () => {
             {/* form */}
             <div className='items-center justify-center h-14 w-full my-4'>
                 <label className="block text-gray-600 text-sm font-normal">First Name</label>
-                <input className='h-10 w-96 border mt-2 px-2 py-2' type="text" />
+                <input 
+                className='h-10 w-96 border mt-2 px-2 py-2' 
+                type="text" 
+                name='firstName'
+                value={employeeModel.firstName}
+                />
             </div>
             <div className='items-center justify-center h-14 w-full my-4'>
                 <label className="block text-gray-600 text-sm font-normal">Last Name</label>
-                <input className='h-10 w-96 border mt-2 px-2 py-2' type="text" />
+                <input 
+                className='h-10 w-96 border mt-2 px-2 py-2' 
+                type="text" 
+                name='lastName'
+                value={employeeModel.lastName}
+                />
             </div>
             <div className='items-center justify-center h-14 w-full my-4'>
                 <label className="block text-gray-600 text-sm font-normal">Email</label>
-                <input className='h-10 w-96 border mt-2 px-2 py-2' type="email" />
+                <input 
+                className='h-10 w-96 border mt-2 px-2 py-2' 
+                type="email"
+                name='emailId'
+                value={employeeModel.emailId}
+                 />
             </div>
             <div className='items-center justify-center h-14 w-full my-4 space-x-4 pt-4'>
                <button className='bg-green-400 hover:bg-green-700 rounded text-white font-semibold py-2 px-6'>Save</button>

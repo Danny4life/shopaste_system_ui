@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import EmployeeService from './service/EmployeeService';
 
 const AddEmployee = () => {
 
@@ -7,7 +8,7 @@ const AddEmployee = () => {
     id: "",
     firstName : "",
     lastName : "",
-    emailId : "",
+    email : "",
   });
 
   const handleChange = (e) => {
@@ -18,6 +19,13 @@ const AddEmployee = () => {
 
   const saveEmployee = (e) => {
     e.preventDefault();
+    EmployeeService.saveEmployee(employeeModel)
+    .then((response) => {
+      console.log(response);
+    }) 
+    .catch((error) => {
+      console.log(error);
+    })
   }
   return (
     <div className='flex max-w-2xl shadow border-b mx-auto'>
@@ -51,7 +59,7 @@ const AddEmployee = () => {
                 <input 
                 className='h-10 w-96 border mt-2 px-2 py-2' 
                 type="email"
-                name='emailId'
+                name='email'
                 value={employeeModel.emailId}
                 onChange={(e) => handleChange(e)}
                  />

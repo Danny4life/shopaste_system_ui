@@ -15,6 +15,10 @@ const AddEmployee = () => {
 
     setEmployeeModel({...employeeModel,[e.target.name] : value});
   }
+
+  const saveEmployee = (e) => {
+    e.preventDefault();
+  }
   return (
     <div className='flex max-w-2xl shadow border-b mx-auto'>
        <div className="px-8 py-8">
@@ -53,7 +57,7 @@ const AddEmployee = () => {
                  />
             </div>
             <div className='items-center justify-center h-14 w-full my-4 space-x-4 pt-4'>
-               <button className='bg-green-400 hover:bg-green-700 rounded text-white font-semibold py-2 px-6'>Save</button>
+               <button onClick={saveEmployee} className='bg-green-400 hover:bg-green-700 rounded text-white font-semibold py-2 px-6'>Save</button>
                <button className='bg-red-400 hover:bg-red-700 rounded text-white font-semibold py-2 px-6'>Clear</button>
             </div>
        </div>

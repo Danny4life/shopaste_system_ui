@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const AddEmployee = () => {
+
+  const [employeeModel, setEmployeeModel] = useState({
+
+    id: "",
+    firstName : "",
+    lastName : "",
+    email : "",
+  });
   return (
     <div className='flex max-w-2xl shadow border-b mx-auto'>
        <div className="px-8 py-8">

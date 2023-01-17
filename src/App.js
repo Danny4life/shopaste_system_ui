@@ -1,5 +1,5 @@
 
-import './App.css';
+
 import AddEmployee from './component/AddEmployee';
 import NavBar from './component/NavBar.jsx';
 

@@ -9,6 +9,12 @@ const AddEmployee = () => {
     lastName : "",
     emailId : "",
   });
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+
+    setEmployeeModel({...employeeModel,[e.target.name] : value});
+  }
   return (
     <div className='flex max-w-2xl shadow border-b mx-auto'>
        <div className="px-8 py-8">
@@ -23,6 +29,7 @@ const AddEmployee = () => {
                 type="text" 
                 name='firstName'
                 value={employeeModel.firstName}
+                onChange={(e) => handleChange(e)}
                 />
             </div>
             <div className='items-center justify-center h-14 w-full my-4'>
@@ -32,6 +39,7 @@ const AddEmployee = () => {
                 type="text" 
                 name='lastName'
                 value={employeeModel.lastName}
+                onChange={(e) => handleChange(e)}
                 />
             </div>
             <div className='items-center justify-center h-14 w-full my-4'>
@@ -41,6 +49,7 @@ const AddEmployee = () => {
                 type="email"
                 name='emailId'
                 value={employeeModel.emailId}
+                onChange={(e) => handleChange(e)}
                  />
             </div>
             <div className='items-center justify-center h-14 w-full my-4 space-x-4 pt-4'>
